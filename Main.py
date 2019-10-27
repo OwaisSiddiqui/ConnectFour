@@ -1,6 +1,7 @@
 """
 Connect4 game | CSC290
 """
+import pygame
 
 from Board import *
 from Disc import *

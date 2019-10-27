@@ -14,13 +14,15 @@ class Board:
 
     def __init__(self):
         """Initializes the Board Class"""
-        self.gameboard = [["", "", "", "", "", "", ""],
-					["", "", "", "", "", "", "",
+        self.gameboard = [
+                    ["", "", "", "", "", "", ""],
 					["", "", "", "", "", "", ""],
 					["", "", "", "", "", "", ""],
 					["", "", "", "", "", "", ""],
-					["", "", "", "", "", "", ""]]
-		self.board_image = pygame.image.load('connect4_board_image.png')
+					["", "", "", "", "", "", ""],
+					["", "", "", "", "", "", ""]
+                    ]
+        self.board_image = pygame.image.load('connect4_board_image.png')
 
 
     def clear(self) -> None:
@@ -51,7 +53,7 @@ class Board:
         # And current position is not None
         # And makes a move if it is empty
         if self.get_position:
-			self.gameboard[self.get_position[0]][self.get_position[1]] == player
+            self.gameboard[self.get_position[0]][self.get_position[1]] = player
 			
 	
 	def check_winner(self, player: str) -> bool:
@@ -95,4 +97,24 @@ class Board:
                 self.gameboard[i-2][j+2] == player and self.gameboard[i-3][j+3] == player:
                     return True
 
+        return False
+    
+    def get_whose_turn(self) -> str:
+        """
+        Returns the player who will make the next move
+        """
+        if self.P1 == 'X':
+            return self.P2
+        else:
+            return self.P1
+
+    def get_position(self, col: int) -> Union[Tuple, bool]:
+        """
+        Retrieves the row in the column for the disc to drop, or returns False if board column is full
+        """
+        for row in range(6):
+            if self.gameboard[row][col] != "" and row == 0: # if all row spaces in column are full
+                return False
+            elif self.gameboard[row][col] != "":
+                return (row-1, col)
         return False
