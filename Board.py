@@ -1,5 +1,6 @@
 import pygame
 import numpy as np
+from typing import Union, Tuple
 
 class Board:
     """A board in a game of Connect Four.
@@ -54,14 +55,13 @@ class Board:
         # And makes a move if it is empty
         if self.get_position:
             self.gameboard[self.get_position[0]][self.get_position[1]] = player
-			
-	
-	def check_winner(self, player: str) -> bool:
+
+    def check_winner(self, player: str) -> bool:
         """
-        Checks for a four in a row for a player 
+        Checks for a four in a row for a player
 
         Return True if finds a four in a row else return False
-   
+
         >>> x = board()
         >>> print(x.check_winner("O", a))
         False

@@ -38,6 +38,9 @@ if __name__ == '__main__':
         # Iterates through the pygame events on the window (e.g. mouse movement, keyboard presses)
         for event in pygame.event.get():
 
+            if event.type == pygame.QUIT:
+                quit()
+
             # If the mouse is on the top of the board, display the disc with the mouse position
             if pygame.mouse.get_pos()[1] <= (300 - BOARD_PIXEL_WIDTH/2) + 50 and not is_mouse_down:
 
