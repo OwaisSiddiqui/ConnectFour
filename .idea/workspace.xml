@@ -4,18 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55752022-cf35-471d-b8a3-3ce22b2731a1" name="Default Changelist" comment="Remove collision detection algorithms, add simple column disc movement&#10;&#10;Removed the collision detection algorithm and now disc simply falls&#10;without having to hit the column borders.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board.py" beforeDir="false" afterPath="$PROJECT_DIR$/Board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollisionDetectionCircleCircle.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Disc.py" beforeDir="false" afterPath="$PROJECT_DIR$/Disc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeaderBoard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Leaderboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SATCollisionDetectionCircleRectangle.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect4_board_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/connect4_board_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect4_red_disc.png" beforeDir="false" afterPath="$PROJECT_DIR$/connect4_red_disc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect4_yellow_disc.png" beforeDir="false" afterPath="$PROJECT_DIR$/connect4_yellow_disc.png" afterDir="false" />
-    </list>
+    <list default="true" id="55752022-cf35-471d-b8a3-3ce22b2731a1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +89,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -282,6 +272,21 @@
       <option name="presentableId" value="Default" />
       <updated>1572214720941</updated>
     </task>
+    <task id="LOCAL-00001" summary="Remove collision detection algorithms, add simple column disc movement&#10;&#10;Removed the collision detection algorithm and now disc simply falls&#10;without having to hit the column borders.">
+      <created>1574065403747</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574065403747</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add .gitignore file">
+      <created>1574065429883</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574065429883</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -298,9 +303,17 @@
       <configuration name="Doctest Board.move" configurationId="tests" />
     </history-entry>
   </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -311,8 +324,8 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39770868" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32872504" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32872504" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -322,9 +335,36 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Remove collision detection algorithms, add simple column disc movement&#10;&#10;Removed the collision detection algorithm and now disc simply falls&#10;without having to hit the column borders." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove collision detection algorithms, add simple column disc movement&#10;&#10;Removed the collision detection algorithm and now disc simply falls&#10;without having to hit the column borders." />
+    <MESSAGE value="Add .gitignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add .gitignore file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SATCollisionDetection.py" />
