@@ -1,3 +1,5 @@
 .DS_Store
 __pycache__
-.idea
+.idea/workspace.xml
+__pycache__/Board.cpython-37.pyc
+__pycache__/Disc.cpython-37.pyc
