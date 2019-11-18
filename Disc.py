@@ -1,6 +1,11 @@
 import pygame
 
-DISC_PIXEL_DIAMETER = 67.258
+
+DISC_PIXEL_DIAMETER = 86.701
+
+P1 = 'X'
+P2 = 'O'
+EMPTY = ''
 
 
 class Disc:
@@ -23,7 +28,10 @@ class Disc:
         """
         if colour == 'Red':
             self.disc_image = pygame.image.load('connect4_red_disc.png')
+            self.player = P1
         elif colour == 'Yellow':
             self.disc_image = pygame.image.load('connect4_yellow_disc.png')
+            self.player = P2
         self.x = 0
         self.y = 0
+
