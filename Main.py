@@ -127,5 +127,6 @@ if __name__ == '__main__':
         display.blit(disc_array[disc_number].disc_image, (disc_array[disc_number].x - DISC_PIXEL_DIAMETER / 2,
                                                           disc_array[disc_number].y - DISC_PIXEL_DIAMETER / 2))
         display.blit(board.board_image, (350 - BOARD_PIXEL_WIDTH / 2, 350 - BOARD_PIXEL_LENGTH / 2))
+        
         # Update the pygame window to show the changes
         pygame.display.update()
