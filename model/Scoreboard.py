@@ -1,6 +1,10 @@
 import pygame
 import time
 import threading
+from model import Board
+
+SCORE_PLAYER1 = 0
+SCORE_PLAYER2 = 0
 
 
 class Scoreboard:
@@ -58,14 +62,22 @@ position = 15
 screen.fill(bg)
 
 player1 = Scoreboard("name", 0)
-while True:
+
+x = True
+board = Board
+while x:
     screen.fill(bg)
     player = Timer()
     player.start()
     e = input("Press Enter")
     player1.score += player.moved()
     print("You got {} score".format(player1.score))
-
+    if board.Board.get_whose_turn("O") == "X":
+        SCORE_PLAYER1 += player.moved()
+    if board.Board.get_whose_turn("X") == "O":
+        SCORE_PLAYER2 += player.moved()
+    x = False
+    print(SCORE_PLAYER1, SCORE_PLAYER2)
 pygame.quit()
 
 

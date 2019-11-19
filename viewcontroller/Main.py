@@ -4,6 +4,7 @@ ConnectFour | CSC290
 import pygame
 from model import Board, Disc
 from typing import Union, Tuple
+from model import Scoreboard
 
 # Initializes the pygame modules
 pygame.init()
@@ -128,6 +129,7 @@ if __name__ == '__main__':
         display.blit(disc_array[disc_number].disc_image, (disc_array[disc_number].x - Disc.DISC_PIXEL_DIAMETER / 2,
                                                           disc_array[disc_number].y - Disc.DISC_PIXEL_DIAMETER / 2))
         display.blit(board.board_image, (350 - Board.BOARD_PIXEL_WIDTH / 2, 350 - Board.BOARD_PIXEL_LENGTH / 2))
-        
+        # Scoreboard.Timer().run()
+
         # Update the pygame window to show the changes
         pygame.display.update()

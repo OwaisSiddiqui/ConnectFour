@@ -27,10 +27,10 @@ class Disc:
         Initialize the disc with an image according to the given colour. Set initial coordinates to (0, 0).
         """
         if colour == 'Red':
-            self.disc_image = pygame.image.load('viewcontroller\connect4_red_disc.png')
+            self.disc_image = pygame.image.load('connect4_red_disc.png')
             self.player = P1
         elif colour == 'Yellow':
-            self.disc_image = pygame.image.load('viewcontroller\connect4_yellow_disc.png')
+            self.disc_image = pygame.image.load('connect4_yellow_disc.png')
             self.player = P2
         self.x = 0
         self.y = 0
