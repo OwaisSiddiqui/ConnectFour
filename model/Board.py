@@ -28,6 +28,19 @@ SIXTH_COLUMN_RIGHT_BORDER = SIXTH_COLUMN_LEFT_BORDER + Disc.DISC_PIXEL_DIAMETER 
 SEVENTH_COLUMN_LEFT_BORDER = SIXTH_COLUMN_RIGHT_BORDER
 SEVENTH_COLUMN_RIGHT_BORDER = SEVENTH_COLUMN_LEFT_BORDER + Disc.DISC_PIXEL_DIAMETER + X_SPACE_BETWEEN_DISCS / 2
 
+FIRST_ROW_TOP_BORDER = TOP_BOARD_SPACE + Y_SPACE_BETWEEN_TOP_DISC
+FIRST_ROW_BOTTOM_BORDER = FIRST_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+SECOND_ROW_TOP_BORDER = FIRST_ROW_BOTTOM_BORDER
+SECOND_ROW_BOTTOM_BORDER = SECOND_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+THIRD_ROW_TOP_BORDER = SECOND_ROW_BOTTOM_BORDER
+THIRD_ROW_BOTTOM_BORDER = THIRD_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+FOURTH_ROW_TOP_BORDER = THIRD_ROW_BOTTOM_BORDER
+FOURTH_ROW_BOTTOM_BORDER = FOURTH_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+FIFTH_ROW_TOP_BORDER = FOURTH_ROW_BOTTOM_BORDER
+FIFTH_ROW_BOTTOM_BORDER = FIFTH_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+SIXTH_ROW_TOP_BORDER = FIFTH_ROW_BOTTOM_BORDER
+SIXTH_ROW_BOTTOM_BORDER = SIXTH_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+
 P1 = 'X'
 P2 = 'O'
 EMPTY = ''
@@ -54,7 +67,7 @@ class Board:
                       ["", "", "", "", "", "", ""],
                       ["", "", "", "", "", "", ""],
                       ["", "", "", "", "", "", ""]]
-        self.board_image = pygame.image.load('connect4_board_image.png')
+        self.board_image = pygame.image.load('viewcontroller/connect4_board_image.png')
 
     def clear(self) -> None:
         """
@@ -86,6 +99,7 @@ class Board:
         move = self.get_position(col)
         if move:
             self.board[move[0]][move[1]] = player
+
 
     def check_winner(self, player: str) -> bool:
         """
@@ -129,6 +143,16 @@ class Board:
                     return True
 
         return False
+
+    def get_winner(self):
+        is_X_winner = self.check_winner('X')
+        is_O_winner = self.check_winner('O')
+        if is_X_winner:
+            return 'X'
+        elif is_O_winner:
+            return 'O'
+        else:
+            return False
 
     @staticmethod
     def get_whose_turn(player: str) -> str:
