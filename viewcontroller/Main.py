@@ -43,22 +43,24 @@ FPS = 60
 possible_winner = "No ONE"
 
 
-def get_move(mouse_pos: Tuple[int, int], player: str) -> Union[Tuple[int, int], bool]:
+def get_move(mouse_pos: Tuple[int, int]) -> Union[Tuple[int, int], bool]:
     move_to_make = [0, 0]
-    if Board.FIRST_COLUMN_LEFT_BORDER <= mouse_pos[0] < Board.FIRST_COLUMN_RIGHT_BORDER:
+    if mouse_pos[0] <= Board.FIRST_COLUMN_RIGHT_BORDER:
         move_to_make[1] = 1
-    elif Board.SECOND_COLUMN_LEFT_BORDER <= mouse_pos[0] < Board.SECOND_COLUMN_RIGHT_BORDER:
+    elif Board.SECOND_COLUMN_LEFT_BORDER < mouse_pos[0] <= Board.SECOND_COLUMN_RIGHT_BORDER:
         move_to_make[1] = 2
-    elif Board.THIRD_COLUMN_LEFT_BORDER <= mouse_pos[0] < Board.THIRD_COLUMN_RIGHT_BORDER:
+    elif Board.THIRD_COLUMN_LEFT_BORDER < mouse_pos[0] <= Board.THIRD_COLUMN_RIGHT_BORDER:
         move_to_make[1] = 3
-    elif Board.FOURTH_COLUMN_LEFT_BORDER <= mouse_pos[0] < Board.FOURTH_COLUMN_RIGHT_BORDER:
+    elif Board.FOURTH_COLUMN_LEFT_BORDER < mouse_pos[0] <= Board.FOURTH_COLUMN_RIGHT_BORDER:
         move_to_make[1] = 4
-    elif Board.FIFTH_COLUMN_LEFT_BORDER <= mouse_pos[0] < Board.FIFTH_COLUMN_RIGHT_BORDER:
+    elif Board.FIFTH_COLUMN_LEFT_BORDER < mouse_pos[0] <= Board.FIFTH_COLUMN_RIGHT_BORDER:
         move_to_make[1] = 5
-    elif Board.SIXTH_COLUMN_LEFT_BORDER <= mouse_pos[0] < Board.SIXTH_COLUMN_RIGHT_BORDER:
+    elif Board.SIXTH_COLUMN_LEFT_BORDER < mouse_pos[0] <= Board.SIXTH_COLUMN_RIGHT_BORDER:
         move_to_make[1] = 6
-    elif Board.SEVENTH_COLUMN_LEFT_BORDER <= mouse_pos[0] <= Board.SEVENTH_COLUMN_RIGHT_BORDER:
+    elif Board.SEVENTH_COLUMN_LEFT_BORDER < mouse_pos[0]:
         move_to_make[1] = 7
+    else:
+        print("***** ERROR MOUSE OUT OF BOUNDS *****")
     possible_move = board.get_position(move_to_make[1])
     if possible_move:
         return possible_move[0], move_to_make[1]
@@ -120,7 +122,7 @@ if __name__ == '__main__':
 
             # Set mouse is down if the user does a right click
             if event.type == pygame.MOUSEBUTTONDOWN and not is_disc_dropping:
-                move = get_move(mouse_pos, disc_array[disc_number].player)
+                move = get_move(mouse_pos)
                 if move:
                     is_disc_dropping = True
                     row_position = get_row_position(move[0])

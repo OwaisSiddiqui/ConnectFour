@@ -1,4 +1,5 @@
 import pygame
+from collections import Counter
 
 pygame.init()
 
@@ -16,8 +17,18 @@ pygame.display.set_caption('LeaderBoard')
 clock = pygame.time.Clock()
 
 # top10 players list
-player_list = [["player 1", 0], ["player 2", 0], ["player 3", 0], ["player 4", 0], ["player 5", 0],
-               ["player 6", 0], ["player 7", 0], ["player 8", 0], ["player 9", 0], ["player 10", 0]]
+player_dict = {"player 1": 1000000, "player 2": 10, "player 3": 100000000, "player 4": 100, "player 5": 1000000000,
+               "player 6": 10000, "player 7": 10000000000, "player 8": 100000, "player 9": 1000, "player 10": 10000000}
+
+
+# transfer players' data from dict to list with top10 score
+def player_list(dic):
+    lst = []
+    k = Counter(dic)
+    high = k.most_common(10)
+    for i in high:
+        lst.append([i[0], i[1]])
+    return lst
 
 
 # basic text setting
@@ -47,12 +58,13 @@ def display_text():
 
     # list top10 players and their score
     for i in range(0, 10):
-        player, player_rect = text_objects(str((i + 1)) + ". " + player_list[i][0],
+        player, player_rect = text_objects(str((i + 1)) + ". " + player_list(player_dict)[i][0],
                                            pygame.font.Font('freesansbold.ttf', 30))
         player_rect.center = (200, 120 + 44 * (i + 1))
         gameDisplay.blit(player, player_rect)
 
-        score, score_title_rect = text_objects(str(player_list[i][1]), pygame.font.Font('freesansbold.ttf', 30))
+        score, score_title_rect = text_objects(str(player_list(player_dict)[i][1]),
+                                               pygame.font.Font('freesansbold.ttf', 30))
         score_title_rect.center = (600, 120 + 44 * (i + 1))
         gameDisplay.blit(score, score_title_rect)
 
