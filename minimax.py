@@ -21,7 +21,7 @@ class MiniMax:
             else:
                 other_player = [other_player for other_player in game if other_player != player][0]
                 valid_moves = game.get_possible_moves()
-                greatest_score = float("-inf")
+                best_score = float("-inf")
                 sum = 0
                 for move in valid_moves:
                     clone = game.copy()
@@ -31,10 +31,10 @@ class MiniMax:
                     score += self.cut_time * num_moves
                     sum += score
 
-                    if score > greatest_score:
+                    if score > best_score:
                         best_score, best_move = score, move
                 sum -= best_score # Remove the best score from window sum
                 alternate_sum = sum / len(valid_moves) 
-                greatest_score = ((1 - self.weight) * greatest_score) + (self.weight * alternate_sum)
-            self.memo[player][game] = (greatest_move, greatest_score)
+                best_score = ((1 - self.weight) * best_score) + (self.weight * alternate_sum)
+            self.memo[player][game] = (best_score, best_score)
         return self.memo[player][game] 

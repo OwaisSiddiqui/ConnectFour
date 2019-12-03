@@ -145,8 +145,7 @@ class Board:
         return False
 
     def get_winner(self):
-        is_X_winner = self.check_winner('X')
-        is_O_winner = self.check_winner('O')
+        is_X_winner, is_O_winner = self.check_winner('X'), self.check_winner('O')
         if is_X_winner:
             return 'X'
         elif is_O_winner:
@@ -180,6 +179,9 @@ class Board:
         return 5, col
 
     def get(self, row, col):
+        """
+        Retrieves the exact coordinate of a row/col space
+        """
         return self.board[row][col]
 
     def __str__(self):
