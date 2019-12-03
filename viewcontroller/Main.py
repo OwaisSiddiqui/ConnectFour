@@ -40,6 +40,8 @@ acceleration = 0.7
 clock = pygame.time.Clock()
 FPS = 60
 
+possible_winner = "No ONE"
+
 
 def get_move(mouse_pos: Tuple[int, int], player: str) -> Union[Tuple[int, int], bool]:
     move_to_make = [0, 0]
@@ -140,9 +142,21 @@ if __name__ == '__main__':
                 is_disc_dropping = False
                 disc_used_array.append(disc_array[disc_number])
                 disc_number += 1
-            possible_winner = board.get_winner()
-            if possible_winner:
-                print("This winner is..."+str(possible_winner))
+        possible_winner = board.get_winner()
+        if possible_winner:
+            display_end = pygame.display.set_mode((500, 500))
+            display_end.fill((255, 255, 255))
+            font = pygame.font.Font('freesansbold.ttf', 32)
+            text = font.render('GameOver', True, (0, 0, 0))
+            textRect = text.get_rect()
+            display_end.blit(text, textRect)
+            pygame.display.update()
+
+            break
+            # print("This winner is..."+str(possible_winner))
+
+
+
 
         # FPS Controller
         dt = clock.tick(FPS)
@@ -158,3 +172,5 @@ if __name__ == '__main__':
 
         # Update the pygame window to show the changes
         pygame.display.update()
+
+

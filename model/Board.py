@@ -67,7 +67,7 @@ class Board:
                       ["", "", "", "", "", "", ""],
                       ["", "", "", "", "", "", ""],
                       ["", "", "", "", "", "", ""]]
-        self.board_image = pygame.image.load('viewcontroller/connect4_board_image.png')
+        self.board_image = pygame.image.load('connect4_board_image.png')
 
     def clear(self) -> None:
         """
