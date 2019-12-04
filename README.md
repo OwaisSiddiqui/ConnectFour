@@ -17,15 +17,13 @@ To install <Connect Four>, follow these steps:
 2. Open the main.py file.
 3. Enjoy the game.
 
-```
-## Using <Connect Four>
+## Using Connect Four
 
 To use <project_name>, follow these steps:
 1. You can use your mouse to move the discs around.
 
-```
 <usage_example>
-```
+
 
 Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
 
