@@ -58,13 +58,8 @@ If you want to contact me you can reach me at <your_email@address.com>.
 
 ## Addendum
 
-<<<<<<< HEAD
-* Shrey: 
-* Jerry: Created Player, PlayerComputer, and PlayerHuman classes, Created Minimax strategy for computer to choose best move in Player vs Computer mode, optimized get_winner function and added description for get function in Board class 
-=======
 * Shrey: In the readme file I wrote down the Description, Prerequisites and Installation of the game. I also helped Owais and Jerry build up on Contributing and Usage of the game.
-* Jerry: 
->>>>>>> 7bbddc67b68cb3f58691cb8238e741572b7cf0c0
+* Jerry: Created Player, PlayerComputer, and PlayerHuman classes, Created Minimax strategy for computer to choose best move in Player vs Computer mode, optimized get_winner function and added description for get function in Board class 
 
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->
