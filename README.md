@@ -1,40 +1,27 @@
-# Project name
+# Connect Four
 
-<!--- These are examples. See https://shields.io for others or to customize this set of shields. You might want to include dependencies, project status and licence info here --->
-![GitHub repo size](https://img.shields.io/github/repo-size/scottydocs/README-template.md)
-![GitHub contributors](https://img.shields.io/github/contributors/scottydocs/README-template.md)
-![GitHub stars](https://img.shields.io/github/stars/scottydocs/README-template.md?style=social)
-![GitHub forks](https://img.shields.io/github/forks/scottydocs/README-template.md?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/scottydocs?style=social)
-
-Project name is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
-
-Additional line of information text about what the project does. Your introduction should be around 2 or 3 sentences. Don't go overboard, people won't read it.
+Connect Four is a `game` that `anyone` can play for some fun-filled `<action>`.
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
-* You have installed the latest version of `<coding_language/dependency/requirement_1>`
-* You have a `<Windows/Linux/Mac>` machine. State which OS is supported/which is not.
-* You have read `<guide/link/documentation_related_to_project>`.
+* You have installed the latest version of `<python>`
+* You have a `<Windows/Mac>` machine.
+* You have read the `<guide>`. (Shorter version of the guide can be found below)
 
-## Installing <project_name>
+## Installing Connect Four
 
-To install <project_name>, follow these steps:
+To install <Connect Four>, follow these steps:
+1. Clone the repo into your local computer.
+2. Open the main.py file.
+3. Enjoy the game.
 
-Linux and macOS:
 ```
-<install_command>
-```
-
-Windows:
-```
-<install_command>
-```
-## Using <project_name>
+## Using <Connect Four>
 
 To use <project_name>, follow these steps:
+1. You can use your mouse to move the discs around.
 
 ```
 <usage_example>
@@ -71,7 +58,7 @@ If you want to contact me you can reach me at <your_email@address.com>.
 
 ## Addendum
 
-* Shrey: 
+* Shrey: In the readme file I wrote down the Description, Prerequisites and Installation of the game. I also helped Owais and Jerry build up on Contributing and Usage of the game.
 * Jerry: 
 
 ## License
