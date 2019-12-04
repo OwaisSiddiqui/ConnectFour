@@ -58,6 +58,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 
 Thanks to the following people who have contributed to this project:
 
+* [@JQ100] (https://github.com/JQ100)
 * [@shreyvakil](https://github.com/lx1922) 
 * [@cainwatson](https://github.com/cainwatson) 
 * [@calchuchesta](https://github.com/calchuchesta) 
@@ -71,6 +72,7 @@ If you want to contact me you can reach me at <your_email@address.com>.
 ## Addendum
 
 * Shrey: 
+* Jerry: 
 
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->

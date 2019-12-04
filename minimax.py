@@ -35,6 +35,6 @@ class MiniMax:
                         best_score, best_move = score, move
                 sum -= best_score # Remove the best score from window sum
                 alternate_sum = sum / len(valid_moves) 
-                best_score = ((1 - self.weight) * best_score) + (self.weight * alternate_sum)
+                best_score = ((1 - self.lim) * best_score) + (self.lim * alternate_sum)
             self.memo[player][game] = (best_score, best_score)
         return self.memo[player][game] 
