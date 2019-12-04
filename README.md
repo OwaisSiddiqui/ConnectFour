@@ -59,6 +59,7 @@ If you want to contact me you can reach me at <your_email@address.com>.
 * Shrey: In the readme file I wrote down the Description, Prerequisites and Installation of the game. I also helped Owais and Jerry build up on Contributing and Usage of the game.
 * Jerry: Created Player, PlayerComputer, and PlayerHuman classes, Created Minimax strategy for computer to choose best move in Player vs Computer mode, optimized get_winner function and added description for get function in Board class 
 * Guanyu: Designed the wireframes of Homepage and Scoreboard, and optimized timer function to develop Scoreboard class. The wireframe I designed combined the work of other members.
+* Nicholas: Created the Leaderboard class to show top players in order, also worked with Guanyu for the Homepage and Scoreboard classes and debugged them.
 
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->
