@@ -72,7 +72,7 @@ If you want to contact me you can reach me at <your_email@address.com>.
 ## Addendum
 
 * Shrey: 
-* Jerry: 
+* Jerry: Created Player, PlayerComputer, and PlayerHuman classes, Created Minimax strategy for computer to choose best move in Player vs Computer mode, optimized get_winner function and added description for get function in Board class 
 
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->
