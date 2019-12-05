@@ -129,7 +129,7 @@ if __name__ == '__main__':
         events = pygame.event.get()
         # Get mouse coordinates
         mouse_pos = pygame.mouse.get_pos()
-        is_clicked = pygame.mouse.get_pressed()
+        is_clicked = False
 
         if not is_disc_dropping:
             # Set disc x-cor to middle of column the mouse_pos is in between, set disc y-cor to above board
@@ -157,48 +157,61 @@ if __name__ == '__main__':
                     row_position = None
                     is_disc_dropping = False
 
-        # If mouse is down and mouse clicked, show the disc falling down
-        if is_disc_dropping and row_position is not None:
-            is_disc_dropping = True
-            disc_array[disc_number].y = min(row_position, disc_array[disc_number].y + velocity)
-            velocity += acceleration
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                is_clicked = True
 
-            # When disc reaches the end of the board set is_disc_dropping to False so the mouse can track the disc
-            # again
-            if disc_array[disc_number].y == row_position:
-                velocity = 0
-                board.move(move[1], disc_array[disc_number].player)
-                is_disc_dropping = False
-                disc_used_array.append(disc_array[disc_number])
-                disc_number += 1
-                scoreboard.stop_timer()
-            possible_winner = board.get_winner()
-            if possible_winner:
-                pass
+        if current == "game":
+            # If mouse is down and mouse clicked, show the disc falling down
+            if is_disc_dropping and row_position is not None:
+                is_disc_dropping = True
+                disc_array[disc_number].y = min(row_position, disc_array[disc_number].y + velocity)
+                velocity += acceleration
 
-        # FPS Controller
-        dt = clock.tick(FPS)
-        dt /= 1000
+                # When disc reaches the end of the board set is_disc_dropping to False so the mouse can track the disc
+                # again
+                if disc_array[disc_number].y == row_position:
+                    velocity = 0
+                    board.move(move[1], disc_array[disc_number].player)
+                    is_disc_dropping = False
+                    disc_used_array.append(disc_array[disc_number])
+                    disc_number += 1
+                    scoreboard.stop_timer()
+                possible_winner = board.get_winner()
+                if possible_winner:
+                    pass
+
+            # FPS Controller
+            dt = clock.tick(FPS)
+            dt /= 1000
 
         if current == "home":
             display.fill((28, 63, 94))
             display.blit(bg, (0, 0))
             display.blit(play_button, (300, 600))
             display.blit(leaderboard_button, (25, 25))
-            if 325 < mouse_pos[0] < 325 + 355 and 600 < mouse_pos[1] < 600 + 80 and is_clicked[0]:
+            if 325 < mouse_pos[0] < 325 + 355 and 600 < mouse_pos[1] < 600 + 80 and is_clicked:
                 current = "mode"
+                is_clicked = False
         elif current == "mode":
             display.blit(bg, (0, 0))
             display.blit(pve_button, (300, 550))
             display.blit(pvp_button, (300, 675))
-            if 300 < mouse_pos[0] < 300 + 450 and 550 < mouse_pos[1] < 550 + 75 and is_clicked[0]:
+            if 300 < mouse_pos[0] < 300 + 450 and 550 < mouse_pos[1] < 550 + 75 and is_clicked:
                 current = "disc colour"
-            if 300 < mouse_pos[0] < 300 + 450 and 675 < mouse_pos[1] < 675 + 75 and is_clicked[0]:
+                is_clicked = False
+            if 300 < mouse_pos[0] < 300 + 450 and 675 < mouse_pos[1] < 675 + 75 and is_clicked:
                 current = "disc colour"
+                is_clicked = False
         elif current == "disc colour":
             display.blit(bg, (0, 0))
             display.blit(pygame.image.load(r"viewcontroller\connect4_red_disc.png"), (300, 600))
             display.blit(pygame.image.load(r"viewcontroller\connect4_yellow_disc.png"), (400, 600))
+            if 300 < mouse_pos[0] < 300+Disc.DISC_PIXEL_DIAMETER and 600 < mouse_pos[1] < 600 + Disc.DISC_PIXEL_DIAMETER and is_clicked:
+                current = "game"
+                is_clicked = False
+            if 400 < mouse_pos[0] < 400+Disc.DISC_PIXEL_DIAMETER and 600 < mouse_pos[1] < 600 + Disc.DISC_PIXEL_DIAMETER and is_clicked:
+                current = "game"
+                is_clicked = False
         elif current == "game":
             display.fill((255, 255, 255))
             for disc in disc_used_array:
