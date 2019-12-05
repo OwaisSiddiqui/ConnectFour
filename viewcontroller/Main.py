@@ -143,19 +143,20 @@ if __name__ == '__main__':
                 pygame.quit()
                 quit()
 
-            if event.type == pygame.KEYDOWN:
-                print(board)
+            if current == "game":
+                if event.type == pygame.KEYDOWN:
+                    print(board)
 
-            # Set mouse is down if the user does a left click
-            if event.type == pygame.MOUSEBUTTONDOWN and not is_disc_dropping:
-                move = get_move(mouse_pos)
-                if move:
-                    is_disc_dropping = True
-                    row_position = get_row_position(move[0])
-                    scoreboard.run()
-                else:
-                    row_position = None
-                    is_disc_dropping = False
+                # Set mouse is down if the user does a left click
+                if event.type == pygame.MOUSEBUTTONDOWN and not is_disc_dropping:
+                    move = get_move(mouse_pos)
+                    if move:
+                        is_disc_dropping = True
+                        row_position = get_row_position(move[0])
+                        scoreboard.run()
+                    else:
+                        row_position = None
+                        is_disc_dropping = False
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 is_clicked = True
