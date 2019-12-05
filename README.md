@@ -60,6 +60,10 @@ If you want to contact me you can reach me at <your_email@address.com>.
 * Jerry: Created Player, PlayerComputer, and PlayerHuman classes, Created Minimax strategy for computer to choose best move in Player vs Computer mode, optimized get_winner function and added description for get function in Board class 
 * Guanyu: Designed the wireframes of Homepage and Scoreboard, and optimized timer function to develop Scoreboard class. The wireframe I designed combined the work of other members.
 * Nicholas: Created the Leaderboard class to show top players in order, also worked with Guanyu for the Homepage and Scoreboard classes and debugged them.
+* Owais: I worked on the Main file which handles all the processes in the game. I implemented the user
+switching pages such as from choose disc colour to the game. I worked on setting up the scoreboard such as 
+starting the timer and updating player's scores. I implemented the Connect4 game itself
+which let the players drop discs, see the animation, and play the next move. 
 
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->

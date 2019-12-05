@@ -5,8 +5,11 @@ from model import Disc
 
 BOARD_PIXEL_LENGTH = 544.668
 BOARD_PIXEL_WIDTH = 669.098
-LEFT_BOARD_SPACE = 350 - BOARD_PIXEL_WIDTH / 2
-TOP_BOARD_SPACE = 350 - BOARD_PIXEL_LENGTH / 2
+
+# Default display height and width is 1366 by 768 pixels, it is changed for different resolutions in Board
+# initialization
+LEFT_BOARD_SPACE = 1366/2 - BOARD_PIXEL_WIDTH / 2
+TOP_BOARD_SPACE = 768/2 - BOARD_PIXEL_LENGTH / 2
 X_SPACE_BETWEEN_LEFT_DISC = 25.072
 X_SPACE_BETWEEN_DISCS = 2.008
 Y_SPACE_BETWEEN_DISCS = 0
@@ -59,7 +62,7 @@ class Board:
     
     board: np.array
 
-    def __init__(self):
+    def __init__(self, display_width, display_height):
         """Initializes the Board Class"""
         self.board = [["", "", "", "", "", "", ""],
                       ["", "", "", "", "", "", ""],
@@ -67,7 +70,78 @@ class Board:
                       ["", "", "", "", "", "", ""],
                       ["", "", "", "", "", "", ""],
                       ["", "", "", "", "", "", ""]]
-        self.board_image = pygame.image.load('connect4_board_image.png')
+        self.board_image = pygame.image.load('viewcontroller\connect4_board_image.png')
+
+        global LEFT_BOARD_SPACE
+        global TOP_BOARD_SPACE
+        global X_SPACE_BETWEEN_LEFT_DISC
+        global X_SPACE_BETWEEN_DISCS
+        global Y_SPACE_BETWEEN_DISCS
+        global Y_SPACE_BETWEEN_TOP_DISC
+        # Column borders (to determine which column the mouse is on)
+        global FIRST_COLUMN_LEFT_BORDER
+        global FIRST_COLUMN_RIGHT_BORDER
+        global SECOND_COLUMN_LEFT_BORDER
+        global SECOND_COLUMN_RIGHT_BORDER
+        global THIRD_COLUMN_LEFT_BORDER
+        global THIRD_COLUMN_RIGHT_BORDER
+        global FOURTH_COLUMN_LEFT_BORDER
+        global FOURTH_COLUMN_RIGHT_BORDER
+        global FIFTH_COLUMN_LEFT_BORDER
+        global FIFTH_COLUMN_RIGHT_BORDER
+        global SIXTH_COLUMN_LEFT_BORDER
+        global SIXTH_COLUMN_RIGHT_BORDER
+        global SEVENTH_COLUMN_LEFT_BORDER
+        global SEVENTH_COLUMN_RIGHT_BORDER
+
+        global FIRST_ROW_TOP_BORDER
+        global FIRST_ROW_BOTTOM_BORDER
+        global SECOND_ROW_TOP_BORDER
+        global SECOND_ROW_BOTTOM_BORDER
+        global THIRD_ROW_TOP_BORDER
+        global THIRD_ROW_BOTTOM_BORDER
+        global FOURTH_ROW_TOP_BORDER
+        global FOURTH_ROW_BOTTOM_BORDER
+        global FIFTH_ROW_TOP_BORDER
+        global FIFTH_ROW_BOTTOM_BORDER
+        global SIXTH_ROW_TOP_BORDER
+        global SIXTH_ROW_BOTTOM_BORDER
+
+        LEFT_BOARD_SPACE = 1366 / 2 - BOARD_PIXEL_WIDTH / 2
+        TOP_BOARD_SPACE = 768 / 2 - BOARD_PIXEL_LENGTH / 2
+        X_SPACE_BETWEEN_LEFT_DISC = 25.072
+        X_SPACE_BETWEEN_DISCS = 2.008
+        Y_SPACE_BETWEEN_DISCS = 0
+        Y_SPACE_BETWEEN_TOP_DISC = 12.232
+        # Column borders (to determine which column the mouse is on)
+        FIRST_COLUMN_LEFT_BORDER = LEFT_BOARD_SPACE + X_SPACE_BETWEEN_LEFT_DISC
+        FIRST_COLUMN_RIGHT_BORDER = LEFT_BOARD_SPACE + X_SPACE_BETWEEN_LEFT_DISC + Disc.DISC_PIXEL_DIAMETER + \
+                                           X_SPACE_BETWEEN_DISCS / 2
+        SECOND_COLUMN_LEFT_BORDER = FIRST_COLUMN_RIGHT_BORDER
+        SECOND_COLUMN_RIGHT_BORDER = SECOND_COLUMN_LEFT_BORDER + Disc.DISC_PIXEL_DIAMETER + X_SPACE_BETWEEN_DISCS / 2
+        THIRD_COLUMN_LEFT_BORDER = SECOND_COLUMN_RIGHT_BORDER
+        THIRD_COLUMN_RIGHT_BORDER = THIRD_COLUMN_LEFT_BORDER + Disc.DISC_PIXEL_DIAMETER + X_SPACE_BETWEEN_DISCS / 2
+        FOURTH_COLUMN_LEFT_BORDER = THIRD_COLUMN_RIGHT_BORDER
+        FOURTH_COLUMN_RIGHT_BORDER = FOURTH_COLUMN_LEFT_BORDER + Disc.DISC_PIXEL_DIAMETER + X_SPACE_BETWEEN_DISCS / 2
+        FIFTH_COLUMN_LEFT_BORDER = FOURTH_COLUMN_RIGHT_BORDER
+        FIFTH_COLUMN_RIGHT_BORDER = FIFTH_COLUMN_LEFT_BORDER + Disc.DISC_PIXEL_DIAMETER + X_SPACE_BETWEEN_DISCS / 2
+        SIXTH_COLUMN_LEFT_BORDER = FIFTH_COLUMN_RIGHT_BORDER
+        SIXTH_COLUMN_RIGHT_BORDER = SIXTH_COLUMN_LEFT_BORDER + Disc.DISC_PIXEL_DIAMETER + X_SPACE_BETWEEN_DISCS / 2
+        SEVENTH_COLUMN_LEFT_BORDER = SIXTH_COLUMN_RIGHT_BORDER
+        SEVENTH_COLUMN_RIGHT_BORDER = SEVENTH_COLUMN_LEFT_BORDER + Disc.DISC_PIXEL_DIAMETER + X_SPACE_BETWEEN_DISCS / 2
+
+        FIRST_ROW_TOP_BORDER = TOP_BOARD_SPACE + Y_SPACE_BETWEEN_TOP_DISC
+        FIRST_ROW_BOTTOM_BORDER = FIRST_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+        SECOND_ROW_TOP_BORDER = FIRST_ROW_BOTTOM_BORDER
+        SECOND_ROW_BOTTOM_BORDER = SECOND_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+        THIRD_ROW_TOP_BORDER = SECOND_ROW_BOTTOM_BORDER
+        THIRD_ROW_BOTTOM_BORDER = THIRD_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+        FOURTH_ROW_TOP_BORDER = THIRD_ROW_BOTTOM_BORDER
+        FOURTH_ROW_BOTTOM_BORDER = FOURTH_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+        FIFTH_ROW_TOP_BORDER = FOURTH_ROW_BOTTOM_BORDER
+        FIFTH_ROW_BOTTOM_BORDER = FIFTH_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
+        SIXTH_ROW_TOP_BORDER = FIFTH_ROW_BOTTOM_BORDER
+        SIXTH_ROW_BOTTOM_BORDER = SIXTH_ROW_TOP_BORDER + Disc.DISC_PIXEL_DIAMETER
 
     def clear(self) -> None:
         """
