@@ -46,7 +46,7 @@ Thanks to the following people who have contributed to this project:
 
 ## Addendum
 
-* Shrey: For the project, I made the board class which basically plays a role in the backend of the game and sets the discs placed at the desired location. I also dded a color select screen to it which basically lets the users select whatever color they wish for the project. I also helped Owais set up the main loop of the game.
+* Shrey: For the project, I made the board class which basically plays a role in the backend of the game and sets the discs placed at the desired location. I also added a color select screen to it which basically lets the users select whatever color they wish for the project. I also helped Owais set up the main loop of the game.
 * Jerry: Created Player, PlayerComputer, and PlayerHuman classes, Created Minimax strategy for computer to choose best move in Player vs Computer mode, optimized get_winner function and added description for get function in Board class 
 * Guanyu: Designed the wireframes of Homepage and Scoreboard, and optimized timer function to develop Scoreboard class. The wireframe I designed combined the work of other members.
 * Nicholas: Created the Leaderboard class to show top players in order, also worked with Guanyu for the Homepage and Scoreboard classes and debugged them.
